@@ -1,0 +1,7 @@
+# .gitignore
+
+*.sqlite3
+# Virtual environments
+myenv/
+venv/
+env/
