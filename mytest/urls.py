@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.http import HttpResponse
 from django.urls import path
 # from myapp.views import signup, login
 # urlpatterns = [
@@ -35,8 +35,11 @@ from django.urls import path
 #     TokenObtainPairView,
 #     TokenRefreshView,
 # )
+def homepage(request):
+    return HttpResponse("Welcome to Veggy Backend API!")
 
 urlpatterns = [
+    path("", homepage),
     path('api/register/', RegisterAPI.as_view(), name='register'),
     path('api/login/', LoginAPI.as_view(), name='login'),
     
